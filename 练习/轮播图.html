@@ -1,0 +1,139 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-01 13:33:22
+ * @LastEditTime: 2020-07-01 14:32:39
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \home\web学习\html5学习\练习\轮播图.html
+--> 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0; padding: 0;
+        }
+        .chooseBtn, .loopDiv{
+            float: left;
+        }
+
+        .loopDiv{
+            width:404px; height: 100px;  
+        }
+        .list{ 
+            list-style: none;
+        }
+
+        .list li{
+            float: left; width: 100px; height: 100px; text-align: center;
+        }
+
+        #pic{
+            width: 400px; height: 400px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="left" class="chooseBtn"><</div>
+    <div  class="loopDiv">
+
+        <img id="pic" />
+        
+        <ul class="list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+    <div id="right" class="chooseBtn">></div>
+    
+
+
+    <script>
+
+        let pic = document.querySelector("#pic");
+         let loopDiv = document.querySelector(".loopDiv");
+
+        //获取所有的li
+        let list = document.querySelector(".list");
+        let lis = list.getElementsByTagName("li");
+
+
+        let left = document.querySelector("#left");
+        let right = document.querySelector("#right");
+
+        ////让第一个小圆点变为红色
+        // lis[0].style.background = "red";
+
+        ////显示当前的图片下标
+        let currentPage = 0;
+
+         //启动定时器
+        let timer = setInterval(func, 1000); 
+
+        function func(){
+            currentPage++;
+             changePic();
+        }
+
+       let changePic = function(){
+        console.log('currentPage: ', currentPage);
+            if(currentPage > 4){
+                currentPage = 1;
+            }
+            if(currentPage <= -1){
+                currentPage = 3
+            }
+
+            //更换图片    //"img/1.jpg"
+            // pic.src= "../img/bg"+currentPage+".jpg";
+            pic.src= `../img/bg${currentPage}.jpg`;
+
+            //给所有的下标红点清除
+            for(let i=0;i <lis.length;i++){
+                lis[i].style.background= "#aaa";
+            }
+            lis[currentPage-1].style.background = "red";
+
+
+        }
+
+        ////鼠标进入
+        loopDiv.addEventListener("mouseover",func1,false);
+          function func1(){
+            //停止
+            clearInterval(timer);
+        }
+
+        //鼠标移出
+        loopDiv.addEventListener("mouseout",func2,false);
+          function func2(){
+            timer = setInterval(func,1000);
+        }
+
+
+        left.addEventListener("click",fun3,false);
+        function fun3(){
+            currentPage--;
+            changePic();
+        }
+
+        right.addEventListener("click",fun3,false);
+        function fun3(){
+            currentPage++;
+            changePic();
+        }
+
+
+    </script>
+</body>
+</html>

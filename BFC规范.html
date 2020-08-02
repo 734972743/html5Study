@@ -1,0 +1,118 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-06-15 18:02:35
+ * @LastEditTime: 2020-06-15 18:32:23
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \home\web学习\html5学习\BFC规范.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .div1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin-bottom: 30px;
+
+        }
+
+        .div2 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            margin-top: 30px;
+        }
+
+        .div3 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+
+            /* overflow: hidden;  是为了让父组件 div3成为一个bfc容器，使其不受子元素div4的影响 */
+            overflow: hidden;
+        }
+
+        .div4 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin-top: 20px;
+        }
+
+
+        .div5 {
+            width: 300px;
+            /* 父容器没有高度，就会自动根据子容器的高度来自适应 */
+            /* 子容器多高，它就多高 */
+            background-color: red;
+            border: 1px solid black;
+            /* 让其成为一个bfc容器 */
+            display: inline-block;
+
+        }
+
+        .div6 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            float: left;
+        }
+
+
+        .div7 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+            float: left;
+        }
+
+        .div8 {
+            /* width = body width */
+            height: 400px;
+            background-color: yellow;
+            /* 让其成为一个bfc容器 */
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. 解决2个div上下margin重叠的问题 -->
+    <!-- <div style=" overflow: hidden;">
+        <div class="div1"></div>
+    </div>
+    <div>
+        <div class="div2"></div>
+    </div> -->
+
+
+    <!-- 2. 解决子容器margin 后却作用到复用器上 ，可以用 bfc解决 -->
+    <!-- <div class="div3">
+        <div class="div4"></div>
+        <div style=" overflow: hidden;">
+            <div class="div4"></div>
+        </div> -
+    </div> -->
+
+    <!-- 3.float 塌陷  -->
+    <!-- <div class="div5">
+        <div class="div6"></div>
+    </div> -->
+
+    <!-- 4. 解决添加浮动后，前面被后面的重叠了的问题 -->
+    <div class="div7"></div>
+    <div class="div8">sdfsfdsfsdfsdfsdfd</div>
+
+</body>
+
+</html>

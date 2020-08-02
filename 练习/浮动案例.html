@@ -1,0 +1,66 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-06-21 14:20:02
+ * @LastEditTime: 2020-06-21 14:42:04
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \home\web学习\html5学习\练习\浮动案例.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0px; padding: 0px;}
+        ul{list-style: none;}
+        a{text-decoration: none;}
+        .l{float: left;}
+        .r{float: right;}
+        .clear::after{content: ""; clear: both; display: block;}
+
+        .list{ overflow: hidden; }
+        .list li{margin-bottom: 20px; display: flex; align-items: center;}
+        .list li:first-of-type{margin-top: 10px;}
+        .list .list_img{margin-left: 10px; }
+        .list .list_img img{margin: 2px;}
+        .list .list_info{width:200px; margin-left: 10px;}
+        .list .list_info p{line-height: 24px;}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="list">
+            <li class="clear">
+                <div class="list_img l"><img src="../img/lagou1.jpg" alt="" width="60px"></div>
+                <div class="list_info l">
+                    <h2>测试标题测试标题</h2>
+                    <p>测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容...
+                        <a href="#">[详细]</a>
+                    </p>
+                </div>
+            </li>
+            <li class="clear">
+                <div class="list_img l"><img src="../img/lagou1.jpg" alt="" width="60px"></div>
+                <div class="list_info l">
+                    <h2>测试标题测试标题</h2>
+                    <p>测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容...
+                        <a href="#">[详细]</a>
+                    </p>
+                </div>
+            </li>
+            <li class="clear">
+                <div class="list_img l"><img src="../img/lagou1.jpg" alt="" width="60px"></div>
+                <div class="list_info l">
+                    <h2>测试标题测试标题</h2>
+                    <p>测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容...
+                        <a href="#">[详细]</a>
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>

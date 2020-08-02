@@ -1,0 +1,83 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-01 15:16:01
+ * @LastEditTime: 2020-07-01 16:58:24
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \home\web学习\html5学习\练习\多层树形菜单.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 数据格式为 { id : "保证唯一即可" , value : "展示的内容" , level : "树的层级" , fatherId : "父节点id" }
+    window.onload = function (ev) {
+        var array = [
+                {id: 1, value: "光明学院", level: 0, fatherId: 0},
+                {id: 2, value: "魔法学院", level: 0, fatherId: 0},
+                {id: 3, value: "初级", level: 1, fatherId: 1},
+                {id: 4, value: "高级", level: 1, fatherId: 1},
+                {id: 5, value: "初级", level: 1, fatherId: 2},
+                {id: 7, value: "玛丽", level: 2, fatherId: 3},
+                {id: 8, value: "鲍勃", level: 2, fatherId: 3},
+                {id: 9, value: "杰克", level: 2, fatherId: 4},
+                {id: 10, value: "琼", level: 2, fatherId: 4},
+                {id: 11, value: "约翰", level: 2, fatherId: 4},
+                {id: 12, value: "迈克", level: 2, fatherId: 5},
+                {id: 13, value: "史密斯", level: 3, fatherId: 12}
+            ];
+            // 顶级父容器ul
+            let ul = document.createElement("ul");
+            ul.id = "ul0";
+            let tree = document.querySelector("#tree");
+            tree.appendChild(ul);
+
+            // 根据level分层,外循环范围为level范围
+            for(let j=0; j<5;j++){
+                for(let i in array){
+                    if(array[i].level == j){
+                        //找父级ul
+                        let ulFather = document.getElementById("ul"+array[i].fatherId);
+                        let liSon = document.createElement("li");
+                        liSon.innerHTML = array[i].value;
+                        liSon.id = array[i].id;
+                        liSon.style.color =  j%2 ==0 ? "green":"orange";
+                        liSon.style.cursor = "pointer";
+                        // 监听点击
+                        liSon.addEventListener("click",function(){
+                            //获取子后代的ul
+                            let ulClicked  = document.getElementById("ul"+this.id);
+                            if(ulClicked.style.display == "none"){
+                                ulClicked.style.display = "block";
+                            }else{
+                                ulClicked.style.display = "none";
+                            }
+                        })
+
+                        //创建每一个子ul
+                        let ulSon  = document.createElement("ul");
+                        ulSon.id = "ul"+liSon.id;  // li与ul为兄弟关系,点击事件根据li找到ul
+                        ulSon.style.display = "none";  
+
+                        ulFather.appendChild(liSon);  // 添加li到父容器,以显示内容
+                        ulFather.appendChild(ulSon) ;   //添加ul到父容器,作为下一分支的容器
+                    }
+                }
+            }
+
+    }
+
+    </script>
+</head>
+<body>
+    <!-- 用纯js实现多层树形菜单 -->
+    <div id="tree"></div>
+
+
+    
+</body>
+</html>

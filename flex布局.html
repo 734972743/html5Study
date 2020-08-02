@@ -1,0 +1,159 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-06-16 00:11:26
+ * @LastEditTime: 2020-07-19 16:33:21
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \home\web学习\html5学习\flex布局.html
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 600px;
+            height: 400px;
+            border: 1px solid black;
+            display: flex;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: auto;
+        }
+
+
+        .box {
+            width: 300px;
+            height: 400px;
+            border: 1px solid black;
+            display: flex;
+            /* 控制flex布局中的子项的排列方向 */
+            flex-direction: row;
+            /* flex布局中子项超过宽度后是否换行显示 */
+            flex-wrap: wrap;
+
+            /* 上面 两种写法的复合写法 */
+            /* 第一个值表示方向，第二值表示是否换行 */
+            flex-flow: row wrap;
+        }
+
+        .box div {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+
+
+        .box2 {
+            width: 300px;
+            height: 400px;
+            border: 1px solid black;
+            display: flex;
+
+            /* justify-content: center; */
+            justify-content: space-evenly;
+        }
+
+        .box2 div {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+
+        .box3 {
+            width: 300px;
+            height: 400px;
+            border: 1px solid black;
+            display: flex;
+
+            /* justify-content: center; */
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+
+            /* align-items: 表示 flex子项相对与父容器上侧轴上的对齐方式 
+             这个表示单行对齐方式*/
+            align-items: flex-start;
+
+            /* align-items: 表示 flex子项相对与父容器上侧轴上的对齐方式 
+             这个表示多行对齐方式*/
+            align-content: space-around;
+        }
+
+        .box3 div {
+            width: 50px;
+            /* flex子项如果不写height, 子项的高度会自适应 */
+            /* height: 50px; */
+            background-color: red;
+        }
+
+        .box4{
+            width: 400px;
+            height: 400px;
+            background: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .box4 div{
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="father">
+        <div class="son"></div>
+    </div> -->
+
+    <!-- <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div> -->
+
+    <!-- <div class="box2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div> -->
+
+
+    <!-- <div class="box3">
+        <div>测试文本</div>
+        <div>测试文本测试文本测试文本</div>
+        <div>测试文本测试文本</div>
+        <div>测试文本测试文本</div>
+        <div>测试文本测试文本测试文本</div>
+        <div>测试文本测试文本</div>
+        <div>测试文本测试文本</div>
+        <div>测试文本测试文本测试文本</div>
+    </div> -->
+
+
+    <div class="box4">
+        <div></div>
+    </div>
+
+
+</body>
+
+</html>

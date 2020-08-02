@@ -1,0 +1,51 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-06-15 23:51:20
+ * @LastEditTime: 2020-06-15 23:58:44
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \home\web学习\html5学习\column分栏布局.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1 {
+            width: 600px;
+            height: 400px;
+            border: 1px solid black;
+            column-width: 100px;
+            overflow-y: scroll;
+
+            column-gap: 30px;
+            /* 分栏线 */
+            column-rule: 1px red dashed;
+        }
+
+        .box1 h2 {
+            /* 分栏合并 */
+            column-span: all;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box1">
+        <h2>番茄打了激素怎样辨别？菜农：教你4个方法，不用担心买到催熟的</h2>
+        <div>
+            为支持北京市疫情防控技术需要，6月12日，中国疾控中心迅速新增启动病毒病所南区P3实验室，扩大检测能力，提高检测效率，24小时不间断开展核酸检测工作，已完成样本检测1000余份。6月13日，完成相关病例样本病毒全基因组序列测定和分析，初步结论已上报并正在积极开展病毒溯源。12日晚，中国疾控中心紧急调派8名流行病学、传染病防控和消毒与感染控制等领域专家，编入国家卫生健康委应对北京市新冠肺炎疫情防控专家组开展工作，专家组根据疫情形势分析研判，对北京市防控工作提出“四个扩大”“四个加强”和“四早”等明确要求。
+            会议强调，中国疾控中心要坚持问题导向和需求导向，针对防控工作中的核心科学问题，建立专班、加强攻关；时刻聚焦北京市疫情防控需求，在病毒溯源和传播机制、病例监测和风险评估、疫情研判和防控策略等方面加强人员与技术投入，与北京市沟通建立协同工作机制，充分发挥公共卫生国家队专业技术优势，为切实抓好“外防输入、内防反弹”工作贡献应有的力量。
+        </div>
+
+    </div>
+</body>
+
+</html>

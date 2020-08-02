@@ -1,0 +1,49 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-06-21 15:21:24
+ * @LastEditTime: 2020-06-21 15:59:29
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \home\web学习\html5学习\练习\定位的下拉菜单.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul{list-style: none;}
+
+        .menu{
+             border: 1px solid black; width: 100px; margin: 10px auto; position: relative; border-bottom: none;
+        }
+        .menu ul {
+            border: 1px solid black; width: 100px;  position: absolute; left: -1px; 
+        }  
+        .menu ul li{ background: white; display: none;}
+
+        .menu:hover ul li{ display: block;}
+
+        .menu ul li:hover{ background: grey;}
+
+        /* 文字超过就...显示 */
+        p{ width: 300px; margin:0 auto; border:1px solid black; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } 
+        
+    </style>
+</head>
+<body>
+    <div class="menu">
+        卖家中心
+        <ul>
+            <li>选项1</li>
+            <li>选项2</li>
+            <li>选项3</li>
+            <li>选项4</li>
+        </ul>
+
+    </div>
+    <p>sdfsfsfsdfjsjfksdjfjsjfsdjflsjlfjsdlfjsldkjflsdjk</p>
+</body>
+</html>

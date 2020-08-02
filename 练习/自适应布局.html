@@ -1,0 +1,57 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-06-20 02:43:33
+ * @LastEditTime: 2020-06-20 02:49:22
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \home\web学习\html5学习\练习\自适应布局.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            display: flex;
+        }
+
+        .left,
+        .center,
+        .right {
+            height: 600px;
+        }
+
+        .left,
+        .right {
+            width: 300px;
+            background-color: red;
+        }
+
+        .center {
+            /* 让改内容自适应 */
+            flex: 1;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+
+</body>
+
+</html>

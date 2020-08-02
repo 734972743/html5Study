@@ -1,0 +1,49 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-06-15 23:37:51
+ * @LastEditTime: 2020-06-15 23:44:21
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \home\web学习\html5学习\练习\盒子浮动阴影.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            width: 800px;
+            list-style: none;
+        }
+
+        ul li {
+            float: left;
+            margin-left: 100px;
+            position: relative;
+            top: 0;
+            transition: 0.2s;
+        }
+
+        ul li:hover {
+            top: -10px;
+            box-shadow: 10px 10px 10px rgba(255, 255, 0, 1), -10px -10px 10px rgba(0, 0, 0, 0.3) inset;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <img src="../img/bg1.jpg" alt="" width="200px">
+        </li>
+        <li>
+            <img src="../img/bg1.jpg" alt="" width="200px">
+        </li>
+    </ul>
+</body>
+
+</html>

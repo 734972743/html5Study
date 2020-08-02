@@ -1,0 +1,117 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-06-15 16:39:10
+ * @LastEditTime: 2020-06-15 17:20:17
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \home\web学习\html5学习\html5新定义的标签.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <!-- hgroup 标题组合 -->
+        <hgroup>
+            <h1>主标题</h1>
+            <h2>副标题</h2>
+        </hgroup>
+        <!-- nav 导航栏 -->
+        <nav>
+            <ul>
+                <li>首页</li>
+                <li>论坛</li>
+                <li>关于</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!--article  独立的内容：主体 -->
+        <article>
+            <!-- section 划分区域   -->
+
+            <section>
+                <input type="text" list="emems">
+
+                <!-- 下拉列表 detalist的id 与input 的list 属性进行绑定 -->
+                <detalist id="emems">
+                    <option value="a"></option>
+                    <option value="b"></option>
+                    <option value="ab"></option>
+                    <option value="ac"></option>
+                </detalist>
+
+                <!--details  用来定义文档细节 -->
+                <details open>
+                    <!-- 用来定义文档标题 -->
+                    <summary>HTML</summary>
+                    <p>超文本标记语言</p>
+                </details>
+
+                <!-- progress 进度条 -->
+                <progress min="0" max="10" value="5"></progress>
+
+                <!-- meter 度量 -->
+                <meter min="0" max="10" value="8" low="1" high="6"></meter> <br>
+
+                <!-- time： 用来标记日期或时间的 -->
+                <p>今天是<time datetime="2008-06-01">儿童节</time> ，好多人啊</p>
+
+                <!-- mark: 用来标记文字的 -->
+                <p>今天是<mark>儿童节</mark> ，好多人啊</p>
+            </section>
+
+            <section>
+                <ul>
+                    <li>
+                        <!-- figure: 用来描述 图像 或图片的 -->
+                        <figure>
+                            <img src=" ./img/bg1.jpg" alt="" width="300px" height="300px">
+                            <!-- figcation 用来存放 描述图像的标题 -->
+                            <figcation>
+                                <br>
+                                背景图1 <br>
+                                背景1说明
+                            </figcation>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="./img/bg1.jpg" alt="" width="300px" height="300px">
+                            <figcation>
+                                <br>
+                                背景图1 <br>
+                                背景1说明
+                            </figcation>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="./img/bg1.jpg" alt="" width="300px" height="300px">
+                            <figcation>
+                                <br>
+                                背景图1 <br>
+                                背景1说明
+                            </figcation>
+                        </figure>
+                    </li>
+                </ul>
+            </section>
+
+            <section></section>
+        </article>
+        <!-- 侧边栏 -->
+        <aside>
+        </aside>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

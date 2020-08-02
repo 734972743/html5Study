@@ -1,0 +1,42 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-06-21 02:57:51
+ * @LastEditTime: 2020-06-21 03:08:49
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \home\web学习\html5学习\练习\清除浮动.html
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{width: 200px; 
+        /* 1.给父容器添加高度 */
+         /* height: 100px;   */
+        border: 1px solid black;
+        /*2. 给父容器添加浮动 */
+        /* float: left; */
+        /* 3.给父容器添加overflow:hidden */
+        /* overflow: hidden; */
+        }
+        .box2{width: 100px; height: 100px; background: red; float: left;}
+
+        /* 4.添加一个空标签， 空标签里设置clear:both */
+        /* .clear{clear: both;} */
+
+        /* 5.给父容器添加after伪类  这种方式推荐使用*/
+        .clear2:after{ content: ""; clear: both; display: block;}
+    </style>
+</head>
+<body>
+    <!--嵌套排列 清除浮动 -->
+    <div class="box1 clear2" >
+        <div class="box2"></div>
+        <div class="clear"></div>
+    </div>
+    sdfsfsfs
+</body>
+</html>
